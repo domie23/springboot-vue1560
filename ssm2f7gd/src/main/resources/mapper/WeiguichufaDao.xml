@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WeiguichufaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WeiguichufaEntity" id="weiguichufaMap">
+        <result property="biaotimingcheng" column="biaotimingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="weiguineirong" column="weiguineirong"/>
+        <result property="chufaneirong" column="chufaneirong"/>
+        <result property="chufajine" column="chufajine"/>
+        <result property="tongzhiriqi" column="tongzhiriqi"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="chepaihaoma" column="chepaihaoma"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WeiguichufaVO" >
+		SELECT * FROM weiguichufa  weiguichufa         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WeiguichufaVO" >
+		SELECT  weiguichufa.* FROM weiguichufa  weiguichufa
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WeiguichufaView" >
+
+		SELECT  weiguichufa.* FROM weiguichufa  weiguichufa 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WeiguichufaView" >
+		SELECT * FROM weiguichufa  weiguichufa <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
